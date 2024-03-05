@@ -1,0 +1,46 @@
+def main():
+    tasks=[]
+    while True:
+        print("********* To-Do List *********")
+        print("1. Add Task in list")
+        print("2. Show Tasks in list")
+        print("3. Mark Task as Done")
+        print("4. remove task in list")
+        print("5. Exit")
+        ch=input("select the task no")
+        if ch=='1':
+            print()
+            ktasks=int(input("no of tasks to add:"))
+            for i in range(ktasks):
+                task=input("Enter the task")
+                tasks.append({"task": task, "done": False})
+                print("Task added successfully!")
+        elif ch=='2':
+            print("\nTasks:")
+            for index,task in enumerate(tasks):
+                position="Done" if task["done"] else "Not Done"
+                print(f"{index + 1}.{task['task']} - {position}")
+        elif ch=='3':
+            tindex=int(input("which task no mark as done in add list"))-1
+            if 0<=tindex<len(tasks):
+                tasks[tindex]["done"]=True
+                print("your update as done")
+            else:
+                print("Invalid task number in above list")
+        elif ch=='4':
+              if len(tasks)== 0:
+                print("no data found")
+              print()
+              for index,task in enumerate(tasks):
+                  position="Done" if task["done"] else "Not Done"
+                  print(f"{index + 1}. {task['task']} - {position}")
+
+              b=int(input("enter the number to remove the task from the list"))
+              tasks.pop(b-1)
+        elif ch=='5':
+            print("Exit")
+            break
+        else:
+            print("Invalid,Try again later")
+if __name__== "__main__":
+    main()
