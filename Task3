@@ -1,0 +1,25 @@
+import random 
+import array
+length=int(input("enter the length of password(greaterthan 4)"))
+digits=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']   
+lchar=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',  
+       'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q', 
+       'r', 's', 't', 'u', 'v', 'w', 'x','y','z'] 
+uchar=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',  
+       'I', 'J', 'K', 'M', 'N', 'O', 'P', 'Q', 
+       'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y','Z']
+symbols=['@', '#', '$', '%', '=', ':', '?', '.', '/', '|', '~', '>','*', '(', ')', '<'] 
+lists=digits+lchar+uchar+symbols
+ran_digits=random.choice(digits) 
+ran_uchar=random.choice(uchar) 
+ran_lchar=random.choice(lchar) 
+ran_symbols=random.choice(symbols) 
+temp=ran_digits+ran_uchar+ran_lchar+ran_symbols
+for x in range(length-4): 
+    temp=temp+random.choice(lists) 
+    temp_list=array.array('u',temp) 
+    random.shuffle(temp_list) 
+password = "" 
+for x in temp_list:
+    password=password+x 
+print(password)
