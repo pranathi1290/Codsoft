@@ -1,0 +1,26 @@
+m=int(input("enter first no"))
+n=int(input("enter second no"))
+ch=0
+while ch<5:
+    print("1-add")
+    print("2-subtract")
+    print("3-multiply")
+    print("4-divide")
+    print("5-exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        r=m+n
+        print("sum is:",r)
+    elif ch==2:
+        r=m-n
+        print("difference is:",r)
+    elif ch==3:
+        r=m*n
+        print("product is:",r)
+    elif ch==4:
+        r=m/n
+        print("quotient is:",r)
+    elif ch==5:
+        break
+    else:
+        print("invalid choice")
